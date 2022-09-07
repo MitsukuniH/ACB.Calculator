@@ -44,7 +44,12 @@ void Calculator::ReceiveInput()
 	for (auto& com : mCommands)
 	{
 		cin >> com.first;
-		getline(cin, com.second);
+		char c = 0;
+		while (c != ';')
+		{
+			c = getchar();
+			com.second += c;
+		}
 	}
 }
 
